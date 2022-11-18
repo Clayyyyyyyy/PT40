@@ -1,0 +1,20 @@
+Segment ID:
+
+1		set report number
+16,17,18	set report type ABC
+32,33		set hardware type AB
+48,49,50	set cellylar type ABC
+64		set device data
+66		set device status
+80		set accumulators
+144		get bus byte:
+			1	set DTC (Diagnostic Trouble Code) type to OBDII
+			2	set DTC type to J1708
+			4	set DTC type to J1939
+146		set engine
+256		set IMEI
+259		set serial number
+288		set IButton
+296		set temperature
+-1		return null
+default		p.setIndex(p.getIndex() + segmentLength)

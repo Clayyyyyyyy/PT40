@@ -1,0 +1,47 @@
+Alert type:
+
+1		overspeed
+9		OBD enter sleep
+10		OBD exit sleep
+13		OBD battery error
+14		low voltage
+15		OBD shocked
+16		OBD crash detected
+27		OBD enter carry
+29		OBD enter drive mode
+31		OBD enter park mode
+33		ACC on
+34		ACC off
+35		OBD excess idle
+36		OBD enter speed  mode
+40		OBD power connected
+41		OBD power disconnected
+43		OBD low backup battrey
+44		OBD battery connected
+45		OBD battery disconnected
+46		OBD harsh acceleration
+47		OBD harsh braking
+48		OBD sharp turn
+49		OBD sharp turn
+50		OBD jamming detected
+58		OBD enter tow
+63		OBD engine collant temperature violation
+64		OBD engine oil pressure violation
+66		OBD engine error code DTC
+68		OBD enter idle mode
+73		OBD sim card removed
+86		OBD DPA calibrated
+91		OBD feul level lower
+92		OBD fuel level upper
+
+
+FunCode:
+
+GTQSS
+STT, ASTT		position	ProtocolUtil.dealProtocolDecodeResult(fci,dealGps(data),needHandle)
+ALT, AALT		alarm		ProtocolUtil.dealProtocolDecodeResult(fci,alertALT,needHandle)
+ALV, CRR, MNT	other
+TPR, GED, PRM	other		ProtocolUtil.dealProtocolDecodeResult(fci,dealGed(data,cmd,needHandle),needHandle)
+RES			response
+RPR, ERR, USP	response
+default					ProtocolUtil.dealDefaultAtFunCode(protocol,fci, cmd,data,needHandle)
